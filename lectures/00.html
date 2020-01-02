@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to GIS for Public Policy</title>
+<meta name="author" content="(Sergio Rey)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./local.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Org-Reveal Introduction.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Introduction to GIS for Public Policy</h1><h2 class="author">Sergio Rey</h2><p class="date">Created: 2019-12-31 Tue 16:19</p>
+</section>
+
+
+<section>
+<section id="slide-orgd1194c2">
+<h2 id="orgd1194c2"></h2>
+<p>
+Welcome to PBPL273 Introduction to GIS for Public Policy
+</p>
+
+
+<div class="figure">
+<p><img src="./images/00/qgispysal.png" alt="qgispysal.png" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org6258b63">
+<h2 id="org6258b63">Course Introduction</h2>
+<div class="outline-text-2" id="text-org6258b63">
+</div>
+</section>
+<section id="slide-org8b637d6">
+<h3 id="org8b637d6">Description</h3>
+<p>
+This course introduces the fundamental concepts of geographic information
+systems (GIS), geographic information science (GIScience), spatial data, and
+applications of spatial analysis in the social sciences and public policy.
+</p>
+
+</section>
+<section id="slide-org8b637d6-split">
+
+<h3>Description</h3>
+<p>
+In the scope of a 10-week quarter course we can only introduce a handful of the
+key concepts and methods relevant to GIS for Public Policy. As such, the
+course is not intended as an exhaustive treatment. Instead, the goal is that
+students will acquire an understanding of the more common and useful methods
+and practices, and use the course as an entry point for further engagement with the
+field.
+</p>
+</section>
+<section id="slide-org835a9e2">
+<h3 id="org835a9e2">Course Objectives</h3>
+<p>
+At the end of this course students will:
+</p>
+
+<ul>
+<li class="fragment appear">possess a sound understanding of fundamental spatial concepts and theory;</li>
+<li class="fragment appear">know how to locate, import, manipulate, display, and analyze
+geographical data in open source computational tools;</li>
+<li class="fragment appear">have the ability to apply GIScience concepts and methods in public policy and
+social science research.</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org2acb115">
+<h3 id="org2acb115">Computational Learning</h3>
+<ul>
+<li class="fragment appear">We will using <a href="https://en.wikipedia.org/wiki/Open-source_software">open source</a> geospatial software throughout the course, primarily <a href="https://qgis.org/en/site/">QGIS</a></li>
+<li class="fragment appear">No prior programming experience is assumed and all computational concepts are presented in a self-contained manner</li>
+<li class="fragment appear">All software for the course will be made available through lab computers. Students wishing to install these materials on their own machines will be given instructions to do so, <b><b>but this is not required</b></b>.</li>
+
+</ul>
+
+
+
+</section>
+<section id="slide-orgc6cd2ec">
+<h3 id="orgc6cd2ec">Course Structure</h3>
+<ul>
+<li class="fragment appear">We will meet Mondays and Wednesdays.</li>
+<li class="fragment appear">First part of the meeting will be in  lecture  format where we cover core GIS concepts and theory.</li>
+<li class="fragment appear">Second part of the meeting will be more hands on where we explore GIS software to engage with the core concepts introduced in part one.</li>
+
+</ul>
+
+</section>
+<section id="slide-org9357ff1">
+<h3 id="org9357ff1">Grading</h3>
+<div class="outline-text-3" id="text-org9357ff1">
+</div>
+</section>
+<section id="slide-orgc49adf8">
+<h4 id="orgc49adf8">Components</h4>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Component</th>
+<th scope="col" class="org-right">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Exercise 1</td>
+<td class="org-right">15</td>
+</tr>
+
+<tr>
+<td class="org-left">Exercise 2</td>
+<td class="org-right">15</td>
+</tr>
+
+<tr>
+<td class="org-left">Exercise 3</td>
+<td class="org-right">15</td>
+</tr>
+
+<tr>
+<td class="org-left">Exercise 4</td>
+<td class="org-right">15</td>
+</tr>
+
+<tr>
+<td class="org-left">Midterm exam</td>
+<td class="org-right">10</td>
+</tr>
+
+<tr>
+<td class="org-left">Final exam</td>
+<td class="org-right">20</td>
+</tr>
+
+<tr>
+<td class="org-left">Collaboration</td>
+<td class="org-right">10</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-orgf37c50a">
+<h4 id="orgf37c50a">Exercises</h4>
+<p>
+Four exercises will be introduced in class and are to be completed outside of
+meeting times. Collaboration on exercises is encouraged with the understanding that you
+alone are responsible for mastering the material. Collaboration is not allowed on the examinations,
+and material from the exercises will form the bases of some examination questions.
+</p>
+
+
+</section>
+<section id="slide-org33dacee">
+<h4 id="org33dacee">Exams</h4>
+<ul>
+<li class="fragment appear">Exams will be given in-class and are closed-book</li>
+<li class="fragment appear">Reviews will be held during the meeting prior to the exam</li>
+<li class="fragment appear">The final exam will be cumulative</li>
+<li class="fragment appear">Makeups for exams will be given in cases of unforeseen emergencies</li>
+<li class="fragment appear">Makeups will consist of a 1-hour oral examination</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org485b744">
+<h4 id="org485b744">Collaboration</h4>
+<p>
+You have the opportunity to earn a total of 10 collaboration points.
+Collaboration here means you make a contribution that improves the course
+experience for all.
+</p>
+
+<p>
+Points can be earned for the following contributions:
+</p>
+
+<ul>
+<li class="fragment appear">An approved review question (1 pt)</li>
+<li class="fragment appear">A short (10-minute) presentation on a pre-approved GIS related topic (5 pts)</li>
+
+</ul>
+
+</section>
+<section id="slide-orga1e9d57">
+<h4 id="orga1e9d57">Review Questions</h4>
+<ul class="org-ul">
+<li><a id="org646c1da"></a>Can be submitted anytime up to 2 weeks before the midterm or final<br /></li>
+
+<li><a id="orgaddf720"></a>Must be submitted through ilearn<br /></li>
+
+<li><a id="orge914a7c"></a>Have to be accepted by the professor for credit<br /></li>
+</ul>
+
+</section>
+<section id="slide-org2a18d59">
+<h4 id="org2a18d59">Presentation</h4>
+<ul class="org-ul">
+<li><a id="org3a7b276"></a>You can submit a proposal to present a short (10 minute) presentation during course<br /></li>
+
+<li><a id="orgf891721"></a>Students can do collaborative presentations (points will be shared)<br /></li>
+</ul>
+
+</section>
+<section id="slide-orgf866bf1">
+<h3 id="orgf866bf1">Schedule</h3>
+</section>
+<section id="slide-org81358a6">
+<h3 id="org81358a6"></h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Week</th>
+<th scope="col" class="org-right">Date</th>
+<th scope="col" class="org-left">Topic</th>
+<th scope="col" class="org-left">Reading</th>
+<th scope="col" class="org-left">Exercises</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1-06</td>
+<td class="org-left">Introduction to GIScience</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1-08</td>
+<td class="org-left">Introduction to QGIS</td>
+<td class="org-left">Sutton 1</td>
+<td class="org-left">Exercise 1 Out</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1-13</td>
+<td class="org-left">Vector Data</td>
+<td class="org-left">Sutton 2</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1-15</td>
+<td class="org-left">Vector Attributes and Tables</td>
+<td class="org-left">Sutton 3</td>
+<td class="org-left">Exercise 1 Due, Exercise 2 Out</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">1-20</td>
+<td class="org-left">Data Input and Capture</td>
+<td class="org-left">Sutton 4</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1-22</td>
+<td class="org-left">Raster Data</td>
+<td class="org-left">Sutton 5</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-org81358a6-split">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Week</th>
+<th scope="col" class="org-right">Date</th>
+<th scope="col" class="org-left">Topic</th>
+<th scope="col" class="org-left">Reading</th>
+<th scope="col" class="org-left">Exercises</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">1-27</td>
+<td class="org-left">Coordinate Reference Systems</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1-29</td>
+<td class="org-left">Map Production</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Exercise 2 Due</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">2-03</td>
+<td class="org-left">Review</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2-05</td>
+<td class="org-left">Exam 1</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">2-10</td>
+<td class="org-left">Buffering</td>
+<td class="org-left">Sutton 9</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2-12</td>
+<td class="org-left">Interpolation</td>
+<td class="org-left">Sutton 10</td>
+<td class="org-left">Exercise 3 Out</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section id="slide-org81358a6-split">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Week</th>
+<th scope="col" class="org-right">Date</th>
+<th scope="col" class="org-left">Topic</th>
+<th scope="col" class="org-left">Reading</th>
+<th scope="col" class="org-left">Exercises</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">2-17</td>
+<td class="org-left">Spatial Joins</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2-19</td>
+<td class="org-left">Dissolve and Merge</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">2-24</td>
+<td class="org-left">Clipping</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2-26</td>
+<td class="org-left">Tesselations</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Exercise 3 Due, Exercise 4 Out</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">3-02</td>
+<td class="org-left">Georeferencing</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3-04</td>
+<td class="org-left">Web GIS</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">3-09</td>
+<td class="org-left">Next Steps</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3-11</td>
+<td class="org-left">Review</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Exercise 4 Due</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">TBA</td>
+<td class="org-left">Final Exam</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section id="slide-org81358a6-split">
+<p>
+Readings are to be done prior to the date listed. 
+</p>
+
+
+</section>
+<section id="slide-org8e5725f">
+<h3 id="org8e5725f">Code of Conduct</h3>
+<p>
+As course instructor, I am dedicated to providing a harassment-free
+learning experience for all students, regardless of gender, sexual
+orientation, disability, physical appearance, body size, race, religion,
+or choice of operating system. All course participants are expected to
+show respect and courtesy to other students throughout the semester. As
+a learning community we do not tolerate harassment of participants in
+any form.
+</p>
+
+</section>
+<section id="slide-org8e5725f-split">
+
+<h3>Code of Conduct</h3>
+
+<p>
+All communication should be appropriate for a professional audience
+including people of many different backgrounds. Sexual language and
+imagery are not appropriate in this course.
+</p>
+</section>
+<section id="slide-org8e5725f-split">
+
+<h3>Code of Conduct</h3>
+<p>
+Be kind to others. Do not insult or put down other students. Behave
+professionally. Remember that harassment and sexist, racist, or
+exclusionary jokes are not appropriate for PBPL273.
+</p>
+
+<p>
+Students violating these rules may be asked to leave the course, and
+their violations will be reported to the UCR administration.
+</p>
+
+<p>
+This code of conduct is an adaptation of the <a href="https://scipy2018.scipy.org/ehome/299527/648147/index9a04.html">SciPy 2018 Code of Conduct</a>.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcefab3a">
+<h2 id="orgcefab3a">Introductions</h2>
+<div class="outline-text-2" id="text-orgcefab3a">
+</div>
+</section>
+<section id="slide-org100eb27">
+<h3 id="org100eb27">Introduce Yourself</h3>
+<ul>
+<li>Name</li>
+<li>Program</li>
+<li>Why you are here</li>
+
+</ul>
+
+</section>
+<section id="slide-org724b96a">
+<h3 id="org724b96a">Me</h3>
+<div class="outline-text-3" id="text-org724b96a">
+</div>
+</section>
+<section id="slide-org6e3ea77">
+<h4 id="org6e3ea77">My Program</h4>
+
+<div class="figure">
+<p><img src="./images/00/cgs.png" alt="cgs.png" height="200%," width="200%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org8f08e46">
+<h4 id="org8f08e46">Why am I here?</h4>
+
+<div class="figure">
+<p><img src="./images/00/john_sinton.png" alt="john_sinton.png" height="200%," width="200%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgc6f78ab">
+<h4 id="orgc6f78ab"></h4>
+
+<div class="figure">
+<p><img src="./images/00/atlantic_city.png" alt="atlantic_city.png" height="200%," width="200%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org1683e2e">
+<h4 id="org1683e2e"></h4>
+
+<div class="figure">
+<p><img src="./images/00/ac_hotel.png" alt="ac_hotel.png" height="200%," width="200%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org578db88">
+<h4 id="org578db88"></h4>
+
+<div class="figure">
+<p><img src="./images/00/ac_stockton.png" alt="ac_stockton.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgcaf5940" data-transition="none">
+<h4 id="orgcaf5940"></h4>
+<aside class="notes">
+<p>
+Point about restructuring happening in real time with casino workers and
+seniors moving into our campground.
+</p>
+
+</aside>
+
+<div class="figure">
+<p><img src="./images/00/camp0.png" alt="camp0.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org3eb6262" data-transition="none">
+<h4 id="org3eb6262"></h4>
+<aside class="notes">
+<p>
+Point about restructuring happening in real time with casino workers and
+seniors moving into our campground.
+</p>
+
+</aside>
+
+<div class="figure">
+<p><img src="./images/00/camp1.png" alt="camp1.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org91da425" data-transition="none">
+<h4 id="org91da425"></h4>
+<aside class="notes">
+<p>
+Point about restructuring happening in real time with casino workers and
+seniors moving into our campground.
+</p>
+
+</aside>
+
+<div class="figure">
+<p><img src="./images/00/camp2.png" alt="camp2.png" height="75%," width="75%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgd1abf98" data-transition="none">
+<h4 id="orgd1abf98"></h4>
+<aside class="notes">
+<p>
+Point about restructuring happening in real time with casino workers and
+seniors moving into our campground.
+</p>
+
+</aside>
+
+<div class="figure">
+<p><img src="./images/00/camp3.png" alt="camp3.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org4b8ac8f">
+<h2 id="org4b8ac8f">Introduction to GIS</h2>
+<div class="outline-text-2" id="text-org4b8ac8f">
+</div>
+</section>
+<section id="slide-org652a310">
+<h3 id="org652a310">GIS</h3>
+<div class="outline-text-3" id="text-org652a310">
+</div>
+</section>
+<section id="slide-org1b06a37">
+<h4 id="org1b06a37">Geographic Information Systems</h4>
+<ul>
+<li class="fragment appear"><b>Geographic</b>: relates to a specific place on or in relation to the Earth's
+surface</li>
+<li class="fragment appear"><b>Information</b>: data to which some value or interpretation has been added</li>
+<li class="fragment appear"><b>Systems</b>: a system designed to perform a wide range of function on and with GI</li>
+
+</ul>
+
+</section>
+<section id="slide-orgb9e9fc7">
+<h4 id="orgb9e9fc7">Geographic Information Science</h4>
+<ul>
+<li class="fragment appear">The <i>science behind gis</i></li>
+<li class="fragment appear">Coined in 1992 by Michael Goodchild</li>
+
+</ul>
+
+</section>
+<section id="slide-orgb9e9fc7-split">
+
+<h4>Geographic Information Science</h4>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tbZ_QB6wuZs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="slide-org877de33">
+<h4 id="org877de33">Geographic Information Services</h4>
+
+</section>
+<section id="slide-org32a36af">
+<h3 id="org32a36af">GIS History</h3>
+<div class="outline-text-3" id="text-org32a36af">
+</div>
+</section>
+<section id="slide-orge8d4285">
+<h4 id="orge8d4285">Lineage</h4>
+
+</section>
+<section id="slide-org5706491">
+<h4 id="org5706491">Snow Maps</h4>
+
+</section>
+<section id="slide-org2906abd">
+<h4 id="org2906abd">Ian McHarg</h4>
+
+</section>
+<section id="slide-org9bc22ec">
+<h3 id="org9bc22ec">GIS Today</h3>
+<div class="outline-text-3" id="text-org9bc22ec">
+</div>
+</section>
+<section id="slide-orgd8bac67">
+<h4 id="orgd8bac67">GIS Industry</h4>
+
+</section>
+<section id="slide-org97077dc">
+<h4 id="org97077dc">GIS in Academia</h4>
+
+</section>
+<section id="slide-org6b30fc4">
+<h3 id="org6b30fc4">GIS and Public Policy</h3>
+<div class="outline-text-3" id="text-org6b30fc4">
+</div>
+</section>
+<section id="slide-org4a5087a">
+<h4 id="org4a5087a">Positive (Descriptive) Applications</h4>
+<ul>
+<li>applications of GIS to examine a phenomena</li>
+<li>provide scientific evidence and knowledge</li>
+<li>describe the world</li>
+
+</ul>
+
+</section>
+<section id="slide-org92d61d9">
+<h4 id="org92d61d9">Environmental Equity</h4>
+
+<div class="figure">
+<p><img src="./images/00/latimes.png" alt="latimes.png" height="175%," width="175%" />
+</p>
+</div>
+</section>
+<section id="slide-org53532a6">
+<h4 id="org53532a6">Food Deserts</h4>
+
+<div class="figure">
+<p><img src="./images/00/fooddesert.png" alt="fooddesert.png" height="175%," width="175%" />
+</p>
+</div>
+</section>
+<section id="slide-org92f47b8">
+<h4 id="org92f47b8">Land Use Change</h4>
+
+<div class="figure">
+<p><img src="./images/00/loudoun2012.png" alt="loudoun2012.png" height="50%," width="50%" />
+</p>
+</div>
+</section>
+<section id="slide-org92f47b8-split">
+
+<h4>Land Use Change</h4>
+
+<div class="figure">
+<p><img src="./images/00/loudoun2018.png" alt="loudoun2018.png" height="50%," width="50%" />
+</p>
+</div>
+</section>
+<section id="slide-org822ab4a">
+<h4 id="org822ab4a">Economic Growth</h4>
+</section>
+<section id="slide-org5bea875">
+<h4 id="org5bea875">Poverty</h4>
+</section>
+<section id="slide-org5e9c98d">
+<h4 id="org5e9c98d">Socioeconomic Mobility</h4>
+</section>
+<section id="slide-org92ee0a7">
+<h4 id="org92ee0a7">Health</h4>
+
+</section>
+<section id="slide-org6dbffeb">
+<h4 id="org6dbffeb">Normative (Prescriptive) Applications</h4>
+<ul>
+<li>applications of GIS to design and implement policy</li>
+<li>change the world</li>
+
+</ul>
+</section>
+<section id="slide-org1aa65c6">
+<h4 id="org1aa65c6">Transportation Planning</h4>
+</section>
+<section id="slide-orga456953">
+<h4 id="orga456953">Planning</h4>
+
+<div class="figure">
+<p><img src="./images/00/philly3d.png" alt="philly3d.png" height="50%," width="50%" />
+</p>
+</div>
+</section>
+<section id="slide-org5404490">
+<h4 id="org5404490">Disaster Response</h4>
+
+<div class="figure">
+<p><img src="./images/00/tsunami.png" alt="tsunami.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org42c7bb7">
+<h2 id="org42c7bb7">Next Up</h2>
+<ul>
+<li>Introduction to QGIS</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<p> Created by yjwen. </p>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+width:1200, height:800, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'cube',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

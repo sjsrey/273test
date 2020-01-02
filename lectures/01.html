@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to GIS</title>
+<meta name="author" content="(Sergio Rey)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./local.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Org-Reveal Introduction.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Introduction to GIS</h1><h2 class="author">Sergio Rey</h2><p class="date">Created: 2020-01-01 Wed 14:18</p>
+</section>
+
+<section>
+<section id="slide-orgdf6eb04">
+<h2 id="orgdf6eb04">Outline</h2>
+<ul>
+<li>GIS Software</li>
+<li>Open Source and Open Science</li>
+<li>QGIS</li>
+<li>Interface</li>
+<li>Working With Files and Directories</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgfa22afa">
+<h2 id="orgfa22afa">GIS Software</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-orgfef890a">
+<h2 id="orgfef890a">Open Source, Open Science, Open Education</h2>
+<div class="outline-text-2" id="text-orgfef890a">
+</div>
+</section>
+<section id="slide-orgfdfe5cb">
+<h3 id="orgfdfe5cb">Open Source</h3>
+
+</section>
+<section id="slide-orgc78ae5d">
+<h3 id="orgc78ae5d">Freedoms</h3>
+<ol>
+<li>Free as in Beer</li>
+<li>Free as in Speech</li>
+
+</ol>
+</section>
+<section id="slide-org23157e3">
+<h3 id="org23157e3">Open Science</h3>
+
+</section>
+<section id="slide-org3013d48">
+<h3 id="org3013d48">Open Education</h3>
+<p>
+My beliefs:
+</p>
+
+<ul>
+<li>access to quality education is everyone's birthright</li>
+<li>human knowledge is a <a href="https://en.wikipedia.org/wiki/Public_good_(economics)">public good</a> that should be available to all</li>
+<li>human knowledge is a public good that we all can contribute to</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org08eebd6">
+<h2 id="org08eebd6">Getting Started with Lab Computers</h2>
+<div class="outline-text-2" id="text-org08eebd6">
+</div>
+</section>
+<section id="slide-org9a59753">
+<h3 id="org9a59753">Windows</h3>
+<p>
+<a href="https://edu.gcfglobal.org/en/windowsbasics/working-with-files/1/">https://edu.gcfglobal.org/en/windowsbasics/working-with-files/1/</a>
+</p>
+
+</section>
+<section id="slide-orgcb244b5">
+<h3 id="orgcb244b5">Mac OS X</h3>
+<p>
+<a href="https://edu.gcfglobal.org/en/windowsbasics/working-with-files/1/">https://edu.gcfglobal.org/en/windowsbasics/working-with-files/1/</a>
+</p>
+
+</section>
+<section id="slide-orgf9cc6fa">
+<h3 id="orgf9cc6fa">USB Drives</h3>
+<div class="outline-text-3" id="text-orgf9cc6fa">
+</div>
+</section>
+<section id="slide-org4886456">
+<h4 id="org4886456">Why</h4>
+<ul>
+<li>saving your work</li>
+<li>allowing you to sit at a different lab computer</li>
+<li>allowing you to work outside of the lab</li>
+
+</ul>
+
+</section>
+<section id="slide-org063731b">
+<h4 id="org063731b">What</h4>
+<ul>
+<li>a 2 gb drive should be sufficient</li>
+
+</ul>
+
+</section>
+<section id="slide-orgecb8443">
+<h4 id="orgecb8443">How</h4>
+<ul>
+<li>plug in</li>
+<li>see it in the file explorer</li>
+<li>copy files to it</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1ea7f30">
+<h2 id="org1ea7f30">QGIS</h2>
+<div class="outline-text-2" id="text-org1ea7f30">
+</div>
+</section>
+<section id="slide-org6c046e4">
+<h3 id="org6c046e4"></h3>
+
+<div class="figure">
+<p><img src="./images/01/qgis_homepage.png" alt="qgis_homepage.png" height="200%," width="200%" />
+</p>
+</div>
+</section>
+<section id="slide-org2eaa577">
+<h3 id="org2eaa577"></h3>
+
+<div class="figure">
+<p><img src="./images/01/qgis_community.png" alt="qgis_community.png" height="200%," width="200%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orged9b898">
+<h2 id="orged9b898">Installation</h2>
+<div class="outline-text-2" id="text-orged9b898">
+</div>
+</section>
+<section id="slide-org2206f72">
+<h3 id="org2206f72">Windows</h3>
+
+</section>
+<section id="slide-org8469627">
+<h3 id="org8469627">Mac OS X</h3>
+
+</section>
+<section id="slide-org4231f00">
+<h3 id="org4231f00">Linux</h3>
+
+</section>
+</section>
+<section>
+<section id="slide-org8066945">
+<h2 id="org8066945">Sample Data</h2>
+<div class="outline-text-2" id="text-org8066945">
+</div>
+</section>
+<section id="slide-orge759db0">
+<h3 id="orge759db0">Download Sample Data</h3>
+
+</section>
+<section id="slide-orgd1c715f">
+<h3 id="orgd1c715f">Insert USB Drive</h3>
+
+<div class="figure">
+<p><img src="./images/01/finderdual.png" alt="finderdual.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org2d4e499">
+<h3 id="org2d4e499">Copy Example Data Folder to USB Drive</h3>
+
+<div class="figure">
+<p><img src="./images/01/findercopy.png" alt="findercopy.png" height="75%," width="75%" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orge623302">
+<h2 id="orge623302">Interface</h2>
+<div class="outline-text-2" id="text-orge623302">
+</div>
+</section>
+<section id="slide-orgc8b43b7">
+<h3 id="orgc8b43b7">Interface Getting Started</h3>
+<div class="outline-text-3" id="text-orgc8b43b7">
+</div>
+</section>
+<section id="slide-orgc2b5198">
+<h4 id="orgc2b5198">Open QGIS</h4>
+
+<div class="figure">
+<p><img src="./images/01/qgisopen.png" alt="qgisopen.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgcf660f3">
+<h4 id="orgcf660f3">Load A Vector Layer</h4>
+
+<div class="figure">
+<p><img src="./images/01/addvector.png" alt="addvector.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orga145a7a">
+<h4 id="orga145a7a">Set usb path</h4>
+
+<div class="figure">
+<p><img src="./images/01/vectorpathusb.png" alt="vectorpathusb.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org35e2ea9">
+<h4 id="org35e2ea9">Usb path</h4>
+
+<div class="figure">
+<p><img src="./images/01/vectorpathusbfilled.png" alt="vectorpathusbfilled.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org79fa730">
+<h4 id="org79fa730">Loaded Vector</h4>
+
+<div class="figure">
+<p><img src="./images/01/vectoraddresult.png" alt="vectoraddresult.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org2123f4d">
+<h3 id="org2123f4d">Interface Components</h3>
+<div class="outline-text-3" id="text-org2123f4d">
+</div>
+</section>
+<section id="slide-orge95487e">
+<h4 id="orge95487e">Menu Bar</h4>
+
+<div class="figure">
+<p><img src="./images/01/menubar.png" alt="menubar.png" height="75%," width="75%" />
+</p>
+</div>
+</section>
+<section id="slide-orge574724">
+<h4 id="orge574724">Toolbar</h4>
+
+<div class="figure">
+<p><img src="./images/01/toolbar.png" alt="toolbar.png" height="75%," width="75%" />
+</p>
+</div>
+</section>
+<section id="slide-org915704d">
+<h4 id="org915704d">Canvas</h4>
+
+<div class="figure">
+<p><img src="./images/01/canvas.png" alt="canvas.png" height="75%," width="75%" />
+</p>
+</div>
+</section>
+<section id="slide-org24ec81f">
+<h4 id="org24ec81f">Browser Panel</h4>
+
+<div class="figure">
+<p><img src="./images/01/browserpanel.png" alt="browserpanel.png" height="75%," width="75%" />
+</p>
+</div>
+</section>
+<section id="slide-org031688b">
+<h4 id="org031688b">Layer Panel</h4>
+
+<div class="figure">
+<p><img src="./images/01/layerpanel.png" alt="layerpanel.png" height="75%," width="75%" />
+</p>
+</div>
+</section>
+<section id="slide-org47c7307">
+<h4 id="org47c7307">Locator Bar</h4>
+
+<div class="figure">
+<p><img src="./images/01/locatorbar.png" alt="locatorbar.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org97bd00d">
+<h4 id="org97bd00d">Status Bar</h4>
+
+<div class="figure">
+<p><img src="./images/01/statusbar.png" alt="statusbar.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org208e6ae">
+<h2 id="org208e6ae">Working with Projects, Files, and Directories</h2>
+<div class="outline-text-2" id="text-org208e6ae">
+</div>
+</section>
+<section id="slide-orgd0e164a">
+<h3 id="orgd0e164a">Loading additional layers</h3>
+<div class="outline-text-3" id="text-orgd0e164a">
+</div>
+</section>
+<section id="slide-orgf3b0b41">
+<h4 id="orgf3b0b41">Rivers</h4>
+
+<div class="figure">
+<p><img src="./images/01/riversload.png" alt="riversload.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org39ade7f">
+<h4 id="org39ade7f">Rivers</h4>
+
+<div class="figure">
+<p><img src="./images/01/riversloaded.png" alt="riversloaded.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgd4f127c">
+<h4 id="orgd4f127c">Places</h4>
+
+<div class="figure">
+<p><img src="./images/01/placesloaded.png" alt="placesloaded.png" height="75%," width="75%" />
+</p>
+</div>
+</section>
+<section id="slide-org8f77042">
+<h3 id="org8f77042">Projects</h3>
+<div class="outline-text-3" id="text-org8f77042">
+</div>
+</section>
+<section id="slide-org1e4d45d">
+<h4 id="org1e4d45d">What is a QGIS Project?</h4>
+<ul>
+<li>A meta-file that defines the files associated with a project</li>
+<li>Has extension <code>qgz</code></li>
+<li>Records location of files</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd2cd8ea">
+<h4 id="orgd2cd8ea">Current: Untitled</h4>
+
+<div class="figure">
+<p><img src="./images/01/untitledproject.png" alt="untitledproject.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org9baa377">
+<h4 id="org9baa377">Saving a Project</h4>
+
+<div class="figure">
+<p><img src="./images/01/projectsave.png" alt="projectsave.png" height="75%," width="75%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org9b97f73">
+<h4 id="org9b97f73">Saving a Project</h4>
+
+<div class="figure">
+<p><img src="./images/01/projectsavedialog.png" alt="projectsavedialog.png" height="75%," width="75%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org227676b">
+<h4 id="org227676b">Project: introduction</h4>
+
+<div class="figure">
+<p><img src="./images/01/projectsaved.png" alt="projectsaved.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org33f9af9">
+<h4 id="org33f9af9">Project file</h4>
+
+<div class="figure">
+<p><img src="./images/01/projectfile.png" alt="projectfile.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org7d0325f">
+<h4 id="org7d0325f">Quit QGIS</h4>
+
+<div class="figure">
+<p><img src="./images/01/qgisquit.png" alt="qgisquit.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org41b490f">
+<h4 id="org41b490f">Open Project on Different Computer (Linux)</h4>
+
+<div class="figure">
+<p><img src="./images/01/linuxfile.png" alt="linuxfile.png" height="75%," width="75%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgd3b5129">
+<h4 id="orgd3b5129">QGIS Launch (Linux)</h4>
+
+<div class="figure">
+<p><img src="./images/01/qgislinux.png" alt="qgislinux.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgdbc24ef">
+<h4 id="orgdbc24ef">Open Project</h4>
+
+<div class="figure">
+<p><img src="./images/01/linuxprojectopen.png" alt="linuxprojectopen.png" height="75%," width="75%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgf775d8c">
+<h4 id="orgf775d8c">Opened Project</h4>
+
+<div class="figure">
+<p><img src="./images/01/linuxprojectopened.png" alt="linuxprojectopened.png" height="75%," width="75%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org9193dc6">
+<h4 id="org9193dc6">QGIS Launch  (Mac)</h4>
+
+<div class="figure">
+<p><img src="./images/01/projectmac.png" alt="projectmac.png" height="75%," width="75%" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orge8a76e9">
+<h4 id="orge8a76e9">Opened Project (Mac)</h4>
+
+<div class="figure">
+<p><img src="./images/01/projectopenedmac.png" alt="projectopenedmac.png" height="75%," width="75%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf32dc6a">
+<h2 id="orgf32dc6a">Exercise</h2>
+<ul>
+<li>download datasets</li>
+<li>load first data set</li>
+<li>answer basic questions about attributes</li>
+<li>answer basic questions about layer</li>
+<li>load a second layer</li>
+<li>change layer order</li>
+<li>screen grabs to complete exercise</li>
+<li>save project</li>
+<li>close qgis</li>
+<li>reopen qgis and reload project from where you left off</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgca760e2">
+<h2 id="orgca760e2">Next Up</h2>
+<p>
+Vector Data
+</p>
+</section>
+</section>
+</div>
+</div>
+<p> Created by yjwen. </p>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+width:1200, height:800, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'cube',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
